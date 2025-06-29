@@ -9,7 +9,7 @@ interface ContactFormProps {
   type: 'contact' | 'schedule';
 }
 
-const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, type }) => {
+const ContactForm: React.FC<ContactFormProps> = ({ type }) => {
   const [formStatus, setFormStatus] = useState('idle');
   const formRef = useRef<HTMLFormElement>(null);
 
