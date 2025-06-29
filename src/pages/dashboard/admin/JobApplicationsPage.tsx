@@ -6,7 +6,7 @@ import { apiCall } from '../../../utils/api';
 
 interface JobApplication {
   id: number;
-  job_posting: number;
+  job_posting: number | { id: number };
   applicant: number;
   status: string;
   cover_letter: string;
@@ -35,8 +35,8 @@ interface Job {
 
 const JobApplicationsPage: React.FC = () => {
   const [applications, setApplications] = useState<JobApplication[]>([]);
-  const [users, setUsers] = useState<User[]>([]);
-  const [jobs, setJobs] = useState<Job[]>([]);
+  const [, setUsers] = useState<User[]>([]);
+  const [, setJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCoverLetter, setSelectedCoverLetter] = useState<string | null>(null);

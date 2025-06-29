@@ -209,7 +209,7 @@ const JobsPage = () => {
                       </div>
                       <div className="mt-4 md:mt-0 flex items-center">
                         <span className="text-sm text-dark/50 mr-6">
-                          Posted {job.created_at ? new Date(job.created_at).toLocaleDateString() : job.posted}
+                          Posted {'created_at' in job ? new Date(job.created_at).toLocaleDateString() : job.posted}
                         </span>
                         <Link 
                           to={`/careers/jobs/${job.id}`}

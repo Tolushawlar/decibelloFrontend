@@ -1,5 +1,5 @@
 const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? 'https://your-production-domain.com' 
+  ? 'https://backends-y6bg.onrender.com' 
   : 'http://localhost:3001';
 
 export const apiCall = async (endpoint: string, options?: RequestInit) => {

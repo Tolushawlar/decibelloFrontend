@@ -8,7 +8,7 @@ const RegisterPage: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
-  const [company, setCompany] = useState('');
+  const [company, ] = useState('');
   const [agreeTerms, setAgreeTerms] = useState(false);
   const [agreeMarketing, setAgreeMarketing] = useState(false);
 

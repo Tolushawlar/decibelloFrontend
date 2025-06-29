@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import DashboardLayout from '../../../components/dashboard/DashboardLayout';

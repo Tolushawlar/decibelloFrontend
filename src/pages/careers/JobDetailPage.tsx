@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import ContactFooterSection from '../../components/ContactFooterSection';
@@ -19,7 +19,7 @@ interface Job {
 const JobDetailPage = () => {
   const { jobId } = useParams();
   const navigate = useNavigate();
-  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  // const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [job, setJob] = useState<Job | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -48,38 +48,39 @@ const JobDetailPage = () => {
     fetchJob();
   }, [jobId, navigate]);
   
+
   // Mock job data for fallback
-  const mockJobData = {
-    'job-001': {
-      title: 'Senior Marketing Strategist',
-      department: 'Marketing',
-      location: 'New York',
-      type: 'Full-time',
-      posted: '2 days ago',
-      description: 'We are seeking an experienced Marketing Strategist to develop and implement data-driven marketing strategies for our clients. The ideal candidate will have a strong background in digital marketing, analytics, and strategic planning.',
-      responsibilities: [
-        'Develop comprehensive marketing strategies based on client objectives and market research',
-        'Analyze market trends, consumer behavior, and competitive landscape to identify opportunities',
-        'Lead client presentations and strategic discussions',
-        'Collaborate with cross-functional teams to ensure seamless execution of marketing initiatives',
-        'Monitor campaign performance and provide data-driven recommendations for optimization'
-      ],
-      requirements: [
-        '5+ years of experience in marketing strategy or related field',
-        'Proven track record of developing successful marketing campaigns',
-        'Strong analytical skills with experience in data-driven decision making',
-        'Excellent communication and presentation skills',
-        'Bachelor\'s degree in Marketing, Business, or related field; MBA preferred'
-      ],
-      benefits: [
-        'Competitive salary and performance bonuses',
-        'Comprehensive health, dental, and vision insurance',
-        'Flexible work arrangements',
-        '401(k) matching program',
-        'Professional development opportunities'
-      ]
-    }
-  };
+  // const mockJobData = {
+  //   'job-001': {
+  //     title: 'Senior Marketing Strategist',
+  //     department: 'Marketing',
+  //     location: 'New York',
+  //     type: 'Full-time',
+  //     posted: '2 days ago',
+  //     description: 'We are seeking an experienced Marketing Strategist to develop and implement data-driven marketing strategies for our clients. The ideal candidate will have a strong background in digital marketing, analytics, and strategic planning.',
+  //     responsibilities: [
+  //       'Develop comprehensive marketing strategies based on client objectives and market research',
+  //       'Analyze market trends, consumer behavior, and competitive landscape to identify opportunities',
+  //       'Lead client presentations and strategic discussions',
+  //       'Collaborate with cross-functional teams to ensure seamless execution of marketing initiatives',
+  //       'Monitor campaign performance and provide data-driven recommendations for optimization'
+  //     ],
+  //     requirements: [
+  //       '5+ years of experience in marketing strategy or related field',
+  //       'Proven track record of developing successful marketing campaigns',
+  //       'Strong analytical skills with experience in data-driven decision making',
+  //       'Excellent communication and presentation skills',
+  //       'Bachelor\'s degree in Marketing, Business, or related field; MBA preferred'
+  //     ],
+  //     benefits: [
+  //       'Competitive salary and performance bonuses',
+  //       'Comprehensive health, dental, and vision insurance',
+  //       'Flexible work arrangements',
+  //       '401(k) matching program',
+  //       'Professional development opportunities'
+  //     ]
+  //   }
+  // };
 
   if (loading) {
     return (
@@ -104,15 +105,7 @@ const JobDetailPage = () => {
     );
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormStatus('submitting');
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setFormStatus('success');
-    }, 1500);
-  };
+
 
   return (
     <>
