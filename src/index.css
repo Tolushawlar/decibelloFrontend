@@ -1,0 +1,270 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    font-size: 16px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  @media (max-width: 640px) {
+    html {
+      font-size: 14px;
+    }
+  }
+  
+  body {
+    @apply bg-white text-dark;
+  }
+  
+  /* Responsive typography */
+  h1 {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
+  }
+  
+  h2 {
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold leading-tight;
+  }
+  
+  h3 {
+    @apply text-xl sm:text-2xl font-semibold leading-snug;
+  }
+  
+  h4 {
+    @apply text-lg sm:text-xl font-medium leading-snug;
+  }
+  
+  p {
+    @apply text-base leading-relaxed;
+  }
+  
+  .text-small {
+    @apply text-sm leading-normal;
+  }
+}
+
+/* Component styles */
+@layer components {
+  /* Container */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Section spacing */
+  .section-spacing {
+    @apply py-12 sm:py-16 md:py-20 lg:py-24;
+  }
+  
+  /* Card hover effects */
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+
+  .card-hover:hover {
+    @apply transform -translate-y-1 shadow-md;
+  }
+
+  /* Section fade-in animation */
+  .section-fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .section-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Contact Form Styles */
+  .form-input {
+    @apply w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-primary text-white placeholder-white/30;
+  }
+
+  .form-label {
+    @apply block text-white/80 mb-2 text-sm font-medium;
+  }
+
+  .form-button {
+    @apply w-full py-3 px-6 rounded-lg transition-all bg-gradient-to-r from-primary to-secondary text-white hover:opacity-90 disabled:opacity-50;
+  }
+
+  /* Contact Method Card */
+  .contact-method-card {
+    @apply backdrop-blur-xl bg-white/10 p-6 rounded-2xl border border-white/10 shadow-xl transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .contact-method-icon {
+    @apply bg-gradient-to-r from-primary to-secondary p-3 rounded-lg text-white;
+  }
+
+  /* Footer Styles */
+  .footer-section {
+    @apply border-t border-white/10 pt-12 pb-8 bg-dark/95 backdrop-blur-xl;
+  }
+
+  .footer-heading {
+    @apply text-white text-sm font-semibold uppercase tracking-wider mb-4;
+  }
+
+  .footer-link {
+    @apply text-white/60 hover:text-white transition-colors;
+  }
+
+  .footer-grid {
+    @apply grid grid-cols-2 md:grid-cols-4 gap-8 mb-12;
+  }
+
+  .footer-logo {
+    @apply h-10 w-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center;
+  }
+
+  .footer-description {
+    @apply text-white/60 mb-6 max-w-xs;
+  }
+
+  .footer-bottom {
+    @apply border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center;
+  }
+
+  .footer-copyright {
+    @apply text-white/60 text-sm mb-4 md:mb-0;
+  }
+
+  /* Social Links */
+  .social-links {
+    @apply flex space-x-4;
+  }
+
+  .social-icon {
+    @apply text-white/60 hover:text-white transition-colors h-5 w-5;
+  }
+
+  /* Form Tabs */
+  .form-tabs {
+    @apply flex mb-8 p-1 bg-white/5 rounded-lg;
+  }
+
+  .form-tab {
+    @apply flex-1 py-2 px-4 rounded-md transition-all text-white/70 hover:text-white;
+  }
+
+  .form-tab-active {
+    @apply bg-gradient-to-r from-primary to-secondary text-white;
+  }
+
+  /* Contact Container */
+  .contact-container {
+    @apply backdrop-blur-xl bg-white/10 p-8 rounded-2xl border border-white/10 shadow-xl;
+  }
+
+  /* Responsive image container */
+  .img-container {
+    @apply relative overflow-hidden;
+  }
+  
+  .img-responsive {
+    @apply w-full h-full object-cover;
+  }
+  
+  .img-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-dark/50 to-transparent;
+  }
+
+  /* Button styles */
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-md hover:bg-primary/90 transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-dark px-6 py-3 rounded-md hover:bg-secondary/90 transition-colors;
+  }
+  
+  .btn-outline {
+    @apply border border-white/20 text-white px-6 py-3 rounded-md hover:bg-white/10 transition-colors;
+  }
+
+  /* Hide scrollbar but maintain functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Custom gradient backgrounds */
+  .bg-gradient-primary {
+    @apply bg-gradient-to-r from-primary to-primary/80;
+  }
+
+  .bg-gradient-light {
+    @apply bg-gradient-to-r from-light to-white;
+  }
+
+  /* Responsive padding helpers */
+  .section-padding {
+    @apply py-12 sm:py-16 md:py-20 lg:py-24;
+  }
+  
+  /* Mobile menu */
+  .mobile-menu {
+    @apply fixed inset-0 z-50 bg-dark/90 backdrop-blur-md transform transition-transform duration-300;
+  }
+  
+  .mobile-menu-enter {
+    @apply translate-x-full;
+  }
+  
+  .mobile-menu-enter-active {
+    @apply translate-x-0;
+  }
+  
+  .mobile-menu-exit {
+    @apply translate-x-0;
+  }
+  
+  .mobile-menu-exit-active {
+    @apply translate-x-full;
+  }
+}
+
+/* Smooth transitions */
+a, button {
+  @apply transition-all duration-200;
+}
+
+/* Focus styles */
+button:focus, a:focus, input:focus, textarea:focus {
+  @apply outline-none ring-2 ring-primary/30 ring-offset-2;
+}
+
+/* Disable focus ring for mouse users */
+.js-focus-visible :focus:not(.focus-visible) {
+  @apply outline-none ring-0 ring-offset-0;
+}
+
+/* Responsive grid layouts */
+.grid-auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Image optimization */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Dashboard navbar hiding */
+body.dashboard-active > div > nav {
+  display: none !important;
+}

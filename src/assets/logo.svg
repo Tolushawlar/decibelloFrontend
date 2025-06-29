@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle with Gradient -->
+  <circle cx="100" cy="100" r="90" fill="url(#logoGradient)" />
+  
+  <!-- Letter D -->
+  <path d="M60 60H100C122.091 60 140 77.909 140 100C140 122.091 122.091 140 100 140H60V60Z" fill="white" />
+  <path d="M80 80H100C111.046 80 120 88.954 120 100C120 111.046 111.046 120 100 120H80V80Z" fill="url(#logoGradient)" />
+  
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="logoGradient" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5858f5" />
+      <stop offset="1" stop-color="#f7d54c" />
+    </linearGradient>
+  </defs>
+</svg>
